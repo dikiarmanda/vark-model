@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme=light>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="vark, model, belajar">
+    <meta name="description" content="Ketahui metode belajar yang paling cocok untukmu">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VARK Model</title>
 
@@ -11,17 +14,18 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         * {
-            scrollbar-width: none;
+            overflow: hidden;
         }
     </style>
 
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row vh-100 text-center align-items-center bg-info" id="home">
             <div class="col-12">
                 <h1 class="display-1 mb-3">VARK MODEL</h1>
-                <button class="btn btn-success mb-4">START QUIZ</button><br>
+                <button class="btn btn-success mb-4" onclick="start()">START QUIZ</button><br>
                 <a href="#about" class="btn btn-outline-dark mb-3">Apa itu VARK Model ?</a><br>
                 <a href="#contact" class="btn btn-outline-dark">Contact Me</a>
             </div>
@@ -29,147 +33,350 @@
         <div class="row vh-100 text-center justify-content-center align-items-center bg-warning" id="about">
             <div class="col-8">
                 <h1>Apa itu VARK Model?</h1>
-                <p>Model VARK adalah model yang dapat membantu kamu mengetahui metode belajar apa yang paling efektif kamu terapkan sesuai dengan kepribadianmu.</p>
+                <p>Model VARK adalah model yang dapat membantu kamu mengetahui metode belajar apa yang paling efektif
+                    kamu terapkan sesuai dengan kepribadianmu.</p>
                 <p>©2020 VARK-Learn Limited</p>
                 <a href="#home" class="btn btn-close"></a>
             </div>
         </div>
-        <div class="row vh-100 justify-content-center align-items-center soal d-none">
-            <div class="col-6 soal">
-                <p>1. Saya ingin mendatangi satu toko yang disarankan teman. Saya akan:</p>
-                <input type="checkbox" value="K">A. mencari toko itu berdasarkan tempat lain di sekitar situ yang sudah saya tahu.
-                <input type="checkbox" value="A">B. bertanya pada teman yang tahu arah toko itu.
-                <input type="checkbox" value="R">C. menuliskan alamat lengkap dan daftar belokan yang harus saya ingat.
-                <input type="checkbox" value="V">D. menggunakan peta yang menunjukkan lokasi toko itu.
+        <div class="row vh-100 justify-content-center align-items-center bg-light soal d-none">
+            <div class="col-12 col-sm-6 soal">
+                <h5>1. Saya ingin mendatangi satu toko yang disarankan teman. Saya akan:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal11">
+                    <label class="btn btn-outline-primary" for="soal11">A.</label> mencari toko itu berdasarkan tempat lain di sekitar situ yang sudah saya tahu.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal12">
+                    <label class="btn btn-outline-primary" for="soal12">B.</label> bertanya pada teman yang tahu arah toko itu.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal13">
+                    <label class="btn btn-outline-primary" for="soal13">C.</label> menuliskan alamat lengkap dan daftar belokan yang harus saya ingat.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal14">
+                    <label class="btn btn-outline-primary" for="soal14">D.</label> menggunakan peta yang menunjukkan lokasi toko itu.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>2. Suatu situs internet memiliki video mengenai cara membuat suatu grafik khusus. Di situs itu ada orang yang bicara, ada daftar langkah pembuatan video, dan ada beberapa diagram. Saya paling mengerti isi situs itu dengan cara:</p>
-                <input type="checkbox" value="V">A. mengamati diagram petunjuknya.
-                <input type="checkbox" value="A">B. mendengar suara yang menjelaskan.
-                <input type="checkbox" value="R">C. membaca instruksi yang tertulis.
-                <input type="checkbox" value="K">D. melihat tindakan orangnya.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>2. Suatu situs internet memiliki video mengenai cara membuat suatu grafik khusus. Di situs itu ada orang yang bicara, ada daftar langkah pembuatan video, dan ada beberapa diagram. Saya paling mengerti isi situs itu dengan cara:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal21">
+                    <label class="btn btn-outline-primary" for="soal21">A.</label> mengamati diagram petunjuknya.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal22">
+                    <label class="btn btn-outline-primary" for="soal22">B.</label> mendengar suara yang menjelaskan.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal23">
+                    <label class="btn btn-outline-primary" for="soal23">C.</label> membaca instruksi yang tertulis.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal24">
+                    <label class="btn btn-outline-primary" for="soal24">D.</label> melihat tindakan orangnya.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>3. Saya ingin mengetahui lebih dalam mengenai suatu tur wisata yang saya rencanakan. Saya akan:</p>
-                <input type="checkbox" value="K">A. melihat detail kegiatan dan aktivitas yang akan dilakukan.
-                <input type="checkbox" value="V">B. melihat petanya dan mengamati lokasi-lokasi turnya.
-                <input type="checkbox" value="R">C. membaca perincian jadwal kegiatan tur tersebut.
-                <input type="checkbox" value="A">D. bicara dengan pengelola atau peserta lain di tur itu.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>3. Saya ingin mengetahui lebih dalam mengenai suatu tur wisata yang saya rencanakan. Saya akan:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal31">
+                    <label class="btn btn-outline-primary" for="soal31">A.</label> melihat detail kegiatan dan aktivitas yang akan dilakukan.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal32">
+                    <label class="btn btn-outline-primary" for="soal32">B.</label> melihat petanya dan mengamati lokasi-lokasi turnya.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal33">
+                    <label class="btn btn-outline-primary" for="soal33">C.</label> membaca perincian jadwal kegiatan tur tersebut.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal34">
+                    <label class="btn btn-outline-primary" for="soal34">D.</label> bicara dengan pengelola atau peserta lain di tur itu.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>4. Dalam memilih karir atau jurusan pendidikan, yang penting bagi saya adalah:</p>
-                <input type="checkbox" value="K">A. aplikasi ilmu pada kondisi nyata yang dihadapi.
-                <input type="checkbox" value="A">B. berkomunikasi dengan orang dengan berdiskusi.
-                <input type="checkbox" value="V">C. pekerjaan yang memakai desain, peta, atau bagan.
-                <input type="checkbox" value="R">D. penggunaan kata yang tepat dalam komunikasi tertulis.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>4. Dalam memilih karir atau jurusan pendidikan, yang penting bagi saya adalah:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal41">
+                    <label class="btn btn-outline-primary" for="soal41">A.</label> aplikasi ilmu pada kondisi nyata yang dihadapi.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal42">
+                    <label class="btn btn-outline-primary" for="soal42">B.</label> berkomunikasi dengan orang dengan berdiskusi.
+                </div>        
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal43">
+                    <label class="btn btn-outline-primary" for="soal43">C.</label> pekerjaan yang memakai desain, peta, atau bagan.
+                </div>        
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal44">
+                    <label class="btn btn-outline-primary" for="soal44">D.</label> penggunaan kata yang tepat dalam komunikasi tertulis.
+                </div>        
             </div>
-            <div class="col-6 soal d-none">
-                <p>5. Saat belajar, saya:</p>
-                <input type="checkbox" value="A">A. belajar dengan berdiskusi.
-                <input type="checkbox" value="V">B. mencari pola tertentu.
-                <input type="checkbox" value="K">C. menggunakan contoh dan penerapan.
-                <input type="checkbox" value="R">D. membaca buku, artikel dan diktat.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>5. Saat belajar, saya:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal51">
+                    <label class="btn btn-outline-primary" for="soal51">A.</label> belajar dengan berdiskusi.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal52">
+                    <label class="btn btn-outline-primary" for="soal52">B.</label> mencari pola tertentu.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal53">
+                    <label class="btn btn-outline-primary" for="soal53">C.</label> menggunakan contoh dan penerapan.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal54">
+                    <label class="btn btn-outline-primary" for="soal54">D.</label> membaca buku, artikel dan diktat.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>6. Saya ingin menabung lebih banyak dan mempertimbangkan beberapa cara. Saya akan:</p>
-                <input type="checkbox" value="K">A. mempertimbangkan contohdari setiap cara penghematan berdasarkan kondisi keuangan saya.
-                <input type="checkbox" value="R">B. membaca brosur tertulis yang menjelaskan cara-cara berhemat secara detail.
-                <input type="checkbox" value="V">C. memakai grafik yang menunjukkan variasi pilihan dan jangka waktu yang dibutuhkan.
-                <input type="checkbox" value="A">D. bicara dengan ahli keuangan mengenai cara-cara berhemat yang bisa ditempuh.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>6. Saya ingin menabung lebih banyak dan mempertimbangkan beberapa cara. Saya akan:</h5>
+                <div class="form-check mb-3">    
+                    <input class="btn-check" type="checkbox" value="K" id="soal61">
+                    <label class="btn btn-outline-primary" for="soal61">A.</label> mempertimbangkan contoh dari setiap cara penghematan berdasarkan kondisi keuangan saya.
+                </div>
+                <div class="form-check mb-3">    
+                    <input class="btn-check" type="checkbox" value="R" id="soal62">
+                    <label class="btn btn-outline-primary" for="soal62">B.</label> membaca brosur tertulis yang menjelaskan cara-cara berhemat secara detail.
+                </div>
+                <div class="form-check mb-3">    
+                    <input class="btn-check" type="checkbox" value="V" id="soal63">
+                    <label class="btn btn-outline-primary" for="soal63">C.</label> memakai grafik yang menunjukkan variasi pilihan dan jangka waktu yang dibutuhkan.
+                </div>
+                <div class="form-check mb-3">    
+                    <input class="btn-check" type="checkbox" value="A" id="soal64">
+                    <label class="btn btn-outline-primary" for="soal64">D.</label> bicara dengan ahli keuangan mengenai cara-cara berhemat yang bisa ditempuh.
+                </div>    
             </div>
-            <div class="col-6 soal d-none">
-                <p>7. Saya ingin mempelajari suatu jenis permainan kartu yang baru. Saya akan:</p>
-                <input type="checkbox" value="K">A. melihat orang lain bermain sebelum saya ikut mencoba.
-                <input type="checkbox" value="A">B. mendengar penjelasan orang serta bertanya padanya.
-                <input type="checkbox" value="V">C. memakai diagram yang menjelaskan tahap, langkah dan strategi permainannya.
-                <input type="checkbox" value="R">D. membaca petunjuk tertulis pada permainan itu.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>7. Saya ingin mempelajari suatu jenis permainan kartu yang baru. Saya akan:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal71">
+                    <label class="btn btn-outline-primary" for="soal71">A.</label> melihat orang lain bermain sebelum saya ikut mencoba.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal72">
+                    <label class="btn btn-outline-primary" for="soal72">B.</label> mendengar penjelasan orang serta bertanya padanya.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal73">
+                    <label class="btn btn-outline-primary" for="soal73">C.</label> memakai diagram yang menjelaskan tahap, langkah dan strategi permainannya.
+                </div>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal74">
+                    <label class="btn btn-outline-primary" for="soal74">D.</label> membaca petunjuk tertulis pada permainan itu.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>8. Saya mempunyai masalah jantung. Saya lebih suka dokter yang:</p>
-                <input type="checkbox" value="R">A. memberikan bacaan mengenai masalah yang saya hadapi.
-                <input type="checkbox" value="K">B. memakai alat peraga jantung untuk menunjukkan masalah yang saya hadapi.
-                <input type="checkbox" value="A">C. menguraikan masalah yang saya hadapi.
-                <input type="checkbox" value="V">D. menunjukkan diagram mengenai masalah yang saya hadapi.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>8. Saya mempunyai masalah jantung. Saya lebih suka dokter yang:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal81">
+                    <label class="btn btn-outline-primary" for="soal81">A.</label> memberikan bacaan mengenai masalah yang saya hadapi.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal82">
+                    <label class="btn btn-outline-primary" for="soal82">B.</label> memakai alat peraga jantung untuk menunjukkan masalah yang saya hadapi.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal83">
+                    <label class="btn btn-outline-primary" for="soal83">C.</label> menguraikan masalah yang saya hadapi.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal84">
+                    <label class="btn btn-outline-primary" for="soal84">D.</label> menunjukkan diagram mengenai masalah yang saya hadapi.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>9. Saya ingin mempelajari suatu program baru di komputer. Saya akan:</p>
-                <input type="checkbox" value="R">A. membaca intruksi tertulis pada petunjuknya.
-                <input type="checkbox" value="A">B. bicara dengan orang yang paham tentang program itu.
-                <input type="checkbox" value="K">C. langsung mencoba dan belajar dari kesalahan.
-                <input type="checkbox" value="V">D. mengikuti diagram pada buku petunjuknya.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>9. Saya ingin mempelajari suatu program baru di komputer. Saya akan:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal91">
+                    <label class="btn btn-outline-primary" for="soal91">A.</label> membaca intruksi tertulis pada petunjuknya.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal92">
+                    <label class="btn btn-outline-primary" for="soal92">B.</label> bicara dengan orang yang paham tentang program itu.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal93">
+                    <label class="btn btn-outline-primary" for="soal93">C.</label> langsung mencoba dan belajar dari kesalahan.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal94">
+                    <label class="btn btn-outline-primary" for="soal94">D.</label> mengikuti diagram pada buku petunjuknya.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>10. Ketika belajar sesuatu dari internet, saya menyukai:</p>
-                <input type="checkbox" value="K">A. video cara melakukan atau membuat sesuatu.
-                <input type="checkbox" value="V">B. desain dan fitur visual yang menarik.
-                <input type="checkbox" value="R">C. uraian tertulis, daftar dan penjelasan yang menarik.
-                <input type="checkbox" value="A">D. situs dengan suara, siaran internet atau wawancara.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>10. Ketika belajar sesuatu dari internet, saya menyukai:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal101">
+                    <label class="btn btn-outline-primary" for="soal101">A.</label> video cara melakukan atau membuat sesuatu.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal102">
+                    <label class="btn btn-outline-primary" for="soal102">B.</label> desain dan fitur visual yang menarik.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal103">
+                    <label class="btn btn-outline-primary" for="soal103">C.</label> uraian tertulis, daftar dan penjelasan yang menarik.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal104">
+                    <label class="btn btn-outline-primary" for="soal104">D.</label> situs dengan suara, siaran internet atau wawancara.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>11. Saya ingin mempelajari suatu proyek kerja yang baru. Saya akan meminta:</p>
-                <input type="checkbox" value="V">A. diagram yang berisi tahap-tahap proyek itu lengkap dengan bagan berisi manfaat dan biayanya.
-                <input type="checkbox" value="R">B. laporan tertulis yang menjelaskan bagian utama proyek tersebut.
-                <input type="checkbox" value="A">C. kesempatan berdiskusi mengenai proyek tersebut.
-                <input type="checkbox" value="K">D. contoh-contoh proyek serupa yang sudah berhasil.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>11. Saya ingin mempelajari suatu proyek kerja yang baru. Saya akan meminta:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal111">
+                    <label class="btn btn-outline-primary" for="soal111">A.</label> diagram yang berisi tahap-tahap proyek itu lengkap dengan bagan berisi manfaat dan biayanya.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal112">
+                    <label class="btn btn-outline-primary" for="soal112">B.</label> laporan tertulis yang menjelaskan bagian utama proyek tersebut.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal113">
+                    <label class="btn btn-outline-primary" for="soal113">C.</label> kesempatan berdiskusi mengenai proyek tersebut.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal114">
+                    <label class="btn btn-outline-primary" for="soal114">D.</label> contoh-contoh proyek serupa yang sudah berhasil.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>12. Saya ingin belajar cara memotret dengan lebih baik. Saya akan:</p>
-                <input type="checkbox" value="A">A. bertanya dan berdiskusi mengenai kamera dan fiturnya.
-                <input type="checkbox" value="R">B. membaca instruksi tertulis mengenai cara pemakaian kamera itu.
-                <input type="checkbox" value="V">C. melihat diagram yang menunjukkan komponen kamera itu.
-                <input type="checkbox" value="K">D. melihat contoh hasil yang baik dan yang jelek dari kamera itu.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>12. Saya ingin belajar cara memotret dengan lebih baik. Saya akan:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal121">
+                    <label class="btn btn-outline-primary" for="soal121">A.</label> bertanya dan berdiskusi mengenai kamera dan fiturnya.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal122">
+                    <label class="btn btn-outline-primary" for="soal122">B.</label> membaca instruksi tertulis mengenai cara pemakaian kamera itu.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal123">
+                    <label class="btn btn-outline-primary" for="soal123">C.</label> melihat diagram yang menunjukkan komponen kamera itu.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal124">
+                    <label class="btn btn-outline-primary" for="soal124">D.</label> melihat contoh hasil yang baik dan yang jelek dari kamera itu.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>13. Saya lebih suka pembicara yang dalam presentasinya menggunakan:</p>
-                <input type="checkbox" value="K">A. peragaan, model peraga, atau kesempatan mencoba langsung.
-                <input type="checkbox" value="A">B. kesempatan tanya jawab, diskusi kelompok atau pembicara tamu.
-                <input type="checkbox" value="R">C. cetakan diktat, buku atau bacaan lain.
-                <input type="checkbox" value="V">D. diagram, bagan, peta atau grafik.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>13. Saya lebih suka pembicara yang dalam presentasinya menggunakan:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal131">
+                    <label class="btn btn-outline-primary" for="soal131">A.</label> peragaan, model peraga, atau kesempatan mencoba langsung.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal132">
+                    <label class="btn btn-outline-primary" for="soal132">B.</label> kesempatan tanya jawab, diskusi kelompok atau pembicara tamu.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal133">
+                    <label class="btn btn-outline-primary" for="soal133">C.</label> cetakan diktat, buku atau bacaan lain.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal134">
+                    <label class="btn btn-outline-primary" for="soal134">D.</label> diagram, bagan, peta atau grafik.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>14. Saya baru saja menyelesaikan suatu lomba atau suatu ujian dan saya ingin umpan balik orang lain. Saya mengharapkan:</p>
-                <input type="checkbox" value="K">A. umpan balik yang berisi contoh-contoh dari yang saya kerjakan.
-                <input type="checkbox" value="R">B. umpan balik berupa penjelasan tertulis mengenai hasil pekerjaan saya.
-                <input type="checkbox" value="A">C. umpan balik yang disampaikan langsung kepada saya.
-                <input type="checkbox" value="V">D. umpan balik dalam bentuk grafik mengenai hasil pekerjaan saya.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>14. Saya baru saja menyelesaikan suatu lomba atau suatu ujian dan saya ingin umpan balik orang lain. Saya mengharapkan:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal141">
+                    <label class="btn btn-outline-primary" for="soal141">A.</label> umpan balik yang berisi contoh-contoh dari yang saya kerjakan.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal142">
+                    <label class="btn btn-outline-primary" for="soal142">B.</label> umpan balik berupa penjelasan tertulis mengenai hasil pekerjaan saya.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal143">
+                    <label class="btn btn-outline-primary" for="soal143">C.</label> umpan balik yang disampaikan langsung kepada saya.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal144">
+                    <label class="btn btn-outline-primary" for="soal144">D.</label> umpan balik dalam bentuk grafik mengenai hasil pekerjaan saya.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>15. Saya tertarik dengan suatu rumah atau apartemen. Sebelum berkunjung, saya ingin:</p>
-                <input type="checkbox" value="K">A. melihat video rumah atau apartemen itu.
-                <input type="checkbox" value="A">B. berdiskusi dengan pemiliknya.
-                <input type="checkbox" value="R">C. keterangan tertulis mengenai kamar-kamar dan fiturnya.
-                <input type="checkbox" value="V">D. denah ruangan dan peta area sekitarnya.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>15. Saya tertarik dengan suatu rumah atau apartemen. Sebelum berkunjung, saya ingin:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal151">
+                    <label class="btn btn-outline-primary" for="soal151">A.</label> melihat video rumah atau apartemen itu.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal152">
+                    <label class="btn btn-outline-primary" for="soal152">B.</label> berdiskusi dengan pemiliknya.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal153">
+                    <label class="btn btn-outline-primary" for="soal153">C.</label> keterangan tertulis mengenai kamar-kamar dan fiturnya.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal154">
+                    <label class="btn btn-outline-primary" for="soal154">D.</label> denah ruangan dan peta area sekitarnya.
+                </div>
             </div>
-            <div class="col-6 soal d-none">
-                <p>16. Saya ingin merakit satu set meja kayu yang belum jadi. Saya paling mengerti jika:</p>
-                <input type="checkbox" value="V">A. mengikuti diagram instruksi yang dilampirkan.
-                <input type="checkbox" value="A">B. mendengar saran dari orang yang pernah merakitnya.
-                <input type="checkbox" value="R">C. membaca penjelasan tertulis yang dilampirkan.
-                <input type="checkbox" value="K">D. menonton video orang merakit meja yang serupa.
+            <div class="col-12 col-sm-6 soal d-none">
+                <h5>16. Saya ingin merakit satu set meja kayu yang belum jadi. Saya paling mengerti jika:</h5>
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="V" id="soal161">
+                    <label class="btn btn-outline-primary" for="soal161">A.</label> mengikuti diagram instruksi yang dilampirkan.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="A" id="soal162">
+                    <label class="btn btn-outline-primary" for="soal162">B.</label> mendengar saran dari orang yang pernah merakitnya.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="R" id="soal163">
+                    <label class="btn btn-outline-primary" for="soal163">C.</label> membaca penjelasan tertulis yang dilampirkan.
+                </div>    
+                <div class="form-check mb-3">
+                    <input class="btn-check" type="checkbox" value="K" id="soal164">
+                    <label class="btn btn-outline-primary" for="soal164">D.</label> menonton video orang merakit meja yang serupa.
+                </div>
             </div>
-            <div class="col-12">
-                <button type="submit" onclick="next()">NEXT</button>
-            </div>
+            <button class="btn btn-primary" onclick="next()">NEXT</button>
         </div>
-        <div class="row vh-100 align-items-center result d-none">
-            <div class="col-sm-6">
+        <div class="row vh-100 align-items-center justify-content-center result d-none">
+            <!-- <div class="col-12 col-sm-6">
                 <canvas></canvas>
+            </div> -->
+            <div class="col-12 col-sm-6 text-center">
+                <div class="table-responsive">
+                    <table class="table text-start">
+                        <tbody class="result">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-dark" onclick="reset()">BACK</button>
             </div>
-            <div class="col-sm-6 result"></div>
         </div>
         <footer class="row vh-100 align-items-center text-center text-light bg-dark p-2" id="contact">
             <div class="col-12">
                 <a href="#home" class="display-1 text-light text-decoration-none d-block mb-3">Diki Armanda</a>
-                <a href="https://instagram.com/diki_armandav" class="display-2 text-light text-decoration-none fab fa-instagram me-4"></a>
-                <a href="https://github.com/dikiarmandav" class="display-2 text-light text-decoration-none fab fa-github"></a>
+                <a href="https://instagram.com/diki_armandav"
+                    class="display-2 text-light text-decoration-none fab fa-instagram me-4"></a>
+                <a href="https://github.com/dikiarmandav"
+                    class="display-2 text-light text-decoration-none fab fa-github"></a>
             </div>
         </footer>
     </div>
-    
+
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
+
 </html>
