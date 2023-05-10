@@ -58,3 +58,23 @@ function next() {
 function reset() {
     location.reload()
 }
+
+const darkModeToggle = document.querySelector('#dark-mode-toggle')
+const htmlTag = document.querySelector('html')
+
+function setDarkMode() {
+    htmlTag.setAttribute('data-bs-theme', 'dark')
+}
+
+function setLightMode() {
+    htmlTag.setAttribute('data-bs-theme', 'light')
+}
+
+darkModeToggle.addEventListener('click', () => {
+    const isDarkMode = htmlTag.getAttribute('data-bs-theme') === 'dark'
+    if (isDarkMode) {
+        setLightMode()
+    } else {
+        setDarkMode()
+    }
+});
